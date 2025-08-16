@@ -1,3 +1,17 @@
 ::-webkit-scrollbar{
     display: none;
 }
+.typing{
+display: inline-block;
+/* background-color: red; */
+animation: type 2s steps(10) infinite;
+overflow: hidden;
+border-right: 2px solid black;
+}
+@keyframes type {
+    0%{
+        width: 0ch;
+    }100%{
+        width: 10ch;
+    }
+}
