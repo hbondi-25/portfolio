@@ -1,10 +1,10 @@
-::-webkit-scrollbar{
+/*::-webkit-scrollbar{
     display: none;
 }
 .typing{
-    display: inline-block;
+    display: inline-block;  */
     /* background-color: red; */
-    animation: type 3s steps(9) infinite, 3s blink step-end infinite;
+    /*animation: type 3s steps(9) infinite, 3s blink step-end infinite;
     border-right: 1px solid black;
     overflow: hidden;
 }
@@ -31,4 +31,63 @@
   5%,15%,25%,30%,40%,55%,65%,75%,85%,95%{
     border-right: 3px solid black;
     }
+} */
+/* Keep your existing scrollbar and typing CSS */
+::-webkit-scrollbar {
+    display: none;
+}
+
+.typing {
+    display: inline-block;
+    animation: type 3s steps(9) infinite;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+@keyframes type {
+    0%, 100% { width: 0ch; }
+    50% { width: 10ch; }
+}
+
+/* New Styles */
+.social-icon {
+    @apply w-[40px] h-[40px] rounded-full bg-[#333] flex justify-center items-center text-white hover:bg-blue-400 transition-all duration-300;
+}
+
+.nav-link {
+    @apply flex gap-4 items-center hover:text-white transition-colors duration-300 cursor-pointer;
+}
+
+.nav-link i {
+    @apply text-xl w-6 text-[#a8a9b4];
+}
+
+.nav-link:hover i {
+    @apply text-blue-400;
+}
+
+.section-title {
+    @apply text-4xl font-bold text-[#173b6c] mb-8 relative pb-4;
+}
+
+.section-title::after {
+    content: "";
+    @apply absolute left-0 bottom-0 w-16 h-1 bg-blue-500;
+}
+
+.resume-item {
+    @apply border-l-2 border-blue-500 pl-6 pb-6 relative;
+}
+
+.resume-item::before {
+    content: "";
+    @apply absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-white border-2 border-blue-500;
+}
+
+.skill-tag {
+    @apply bg-blue-100 text-blue-700 px-4 py-1 rounded-full text-sm font-semibold;
+}
+
+html {
+    scroll-behavior: smooth;
 }
