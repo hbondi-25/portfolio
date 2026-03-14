@@ -2,16 +2,33 @@
     display: none;
 }
 .typing{
-display: inline-block;
-/* background-color: red; */
-animation: type 2s steps(10) infinite;
-overflow: hidden;
-border-right: 2px solid black;
+    display: inline-block;
+    /* background-color: red; */
+    animation: type 3s steps(9) infinite, 3s blink step-end infinite;
+    border-right: 1px solid black;
+    overflow: hidden;
+}
+
+.box{
+        border-right: 1px solid black;
 }
 @keyframes type {
     0%{
         width: 0ch;
-    }100%{
+    }
+    50%{
         width: 10ch;
+    }
+    100%{
+        width: 0ch;
+    }
+}
+
+@keyframes blink {
+  0%,10%,20%,30%,40%,50%,60%,70%,80%,90%,100%{
+    border-right: transparent;
+  }
+  5%,15%,25%,30%,40%,55%,65%,75%,85%,95%{
+    border-right: 3px solid black;
     }
 }
